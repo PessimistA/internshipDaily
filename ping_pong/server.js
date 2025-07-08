@@ -25,6 +25,6 @@ const server = net.createServer((socket) => {
   });
 });
 
-server.listen(-, '0.0.0.0', () => {//localdeki bağlantıları dinler 12345 portunu dinler
+server.listen(-, '0.0.0.0', () => {//localdeki bağlantıları dinler  portunu dinler
   console.log('Server listening on port -...');
 });
