@@ -19,14 +19,12 @@ client.connect(-, '-', () => {
     user.prompt();
   });
 
-  setInterval(() => {//süre geciktirme durumlarında interval kullanılır
-    client.write('ping\n');
-    console.log('Sent: ping');
-  }, 2000);
-
   client.on('data', (data) => {//karşı taraftan gelen bilgi
-    console.log('Her:', data.toString().trim());
-    user.prompt();
+    const message = data.toString().trim();
+    readline.clearLine(process.stdout, 0);          // Mevcut satırı temizle
+    readline.cursorTo(process.stdout, 0);           // Satırın başına git
+    console.log('her:',message);                           // Mesajı yaz
+    user.prompt();      
   });
 
   client.on('close', () => {
